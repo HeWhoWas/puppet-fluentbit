@@ -11,7 +11,7 @@
 <% elsif @retry_limit.is_a?(Integer) -%>
     Retry_Limit            <%= @retry_limit %>
 <% end -%>
-<% @output_config.each do |k,v -%>
+<% @output_config.each do |k,v| -%>
   <% if v == false -%>
     <%= k %> False
   <% elsif v == true -%>
