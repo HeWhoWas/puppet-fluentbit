@@ -1,0 +1,22 @@
+# Managed by puppet
+[OUTPUT]
+    Name                   <%= @type %>
+<% if @match -%>
+    Match                  <%= @match %>
+<% end -%>
+<% if @retry_limit == false -%>
+    Retry_Limit            False
+<% elsif @retry_limit == true -%>
+    Retry_Limit            1
+<% elsif @retry_limit.is_a?(Integer) -%>
+    Retry_Limit            <%= @retry_limit %>
+<% end -%>
+<% @output_config.each do |k,v| -%>
+  <%- if v == false -%>
+    <%= k %>    False
+  <%- elsif v == true -%>
+    <%= k %>    True
+  <%- else -%>
+    <%= k %>   <%= v %>
+  <%- end -%>
+<% end -%>
