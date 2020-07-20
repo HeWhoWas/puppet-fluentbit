@@ -12,11 +12,11 @@
     Retry_Limit            <%= @retry_limit %>
 <% end -%>
 <% @output_config.each do |k,v| -%>
-  <% if v == false -%>
-    <%= k %> False
-  <% elsif v == true -%>
-    <%= k %> True
-  <% else -%>
-    <%= k %> <%= v %>
-  <% end -%>
+  <%- if v == false -%>
+    <%= k %>    False
+  <%- elsif v == true -%>
+    <%= k %>    True
+  <%- else -%>
+    <%= k %>   <%= v %>
+  <%- end -%>
 <% end -%>
