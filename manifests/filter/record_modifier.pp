@@ -15,7 +15,7 @@
 #   fluentbit::filter::record_modifier { 'add_hostname':
 #     record => { 'hostname' => '${HOSTNAME}' }
 #   }
-define fluentbit::filter::modify (
+define fluentbit::filter::record_modifier(
   Stdlib::Absolutepath $configfile = "/etc/td-agent-bit/plugins.d/filter_record_modifier_${name}.conf",
   String $match                    = '*',
   Optional[Hash] $record           = undef,
