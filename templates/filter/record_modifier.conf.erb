@@ -1,0 +1,15 @@
+# Managed by puppet
+[FILTER]
+    Name                                                record_modifier
+<% if @match -%>
+    Match                                               <%= @match %>
+<% end -%>
+<% Hash(@record).each do |key, value| -%>
+    Record                                              <%= key %> <%= value %>
+<% end -%>
+<% Hash(@remove_key).each do |key| -%>
+    Remove_key                                          <%= key %>
+<% end -%>
+<% Array(@whitelist_key).each do |key| -%>
+    Whitelist_key                                       <%= key %>
+<% end -%>
